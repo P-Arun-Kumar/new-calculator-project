@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Display from './Display'
 import ButtonElement from './ButtonElement'
+import CalculatorContext from './CalculatorContext'
 const Calculator = () => {
     let [input,setInput] = useState('')
     let handleClick = (values) =>{
@@ -20,12 +21,20 @@ const Calculator = () => {
     let handleClear= () =>{
         setInput('')
     }
+    let data = {
+        input,
+        handleClick,
+        handleClear
+    }
+
   return (
+    <CalculatorContext.Provider value={data}>
     <div className='calculator'>
-        <h1>Calculator gjhgjhgh     </h1>
-        <Display input={input}/>
-        <ButtonElement handleClick={handleClick} handleClear={handleClear}/>
+        <h1>Calculator</h1>
+        <Display />
+        <ButtonElement />
     </div>
+    </CalculatorContext.Provider>
   )
 }
 

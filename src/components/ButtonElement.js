@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from './Button'
+import CalculatorContext from './CalculatorContext'
 
-const ButtonElement = ({handleClick, handleClear}) => {
+const ButtonElement = () => {
+    
     let buttons = [
         '7','8','9','/',
         '4','5','6','*',
@@ -12,9 +14,9 @@ const ButtonElement = ({handleClick, handleClear}) => {
     <div className='button-elements'>
         
         {buttons.map((btn)=>(
-            <Button key={btn} values={btn}  handleClick={handleClick} handleClear={handleClear}/>
+            <Button key={btn} values={btn} />
         ))}
-        <Button values={"C"} handleClick={handleClick} handleClear={handleClear}/>
+        <Button values={"C"}/>
     </div>
   )
 }
