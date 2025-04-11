@@ -5,7 +5,12 @@ const Calculator = () => {
     let [input,setInput] = useState('')
     let handleClick = (values) =>{
         if(values== "=") {
-            setInput(eval(input).toString())
+            try {
+                setInput(eval(input).toString())
+            } catch (error) {
+                setInput("ERROR")
+            }
+           
         }
         else {
             setInput(input+values)
