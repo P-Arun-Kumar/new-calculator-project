@@ -1,0 +1,20 @@
+.App {
+  text-align: center;
+}
+
+.calculator {
+  background-color: lightgrey;
+  width: 400px;
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.button-elements {
+  display: grid;
+  grid-template-columns: 40px 40px 40px 40px ;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px;
+}
